@@ -2,7 +2,10 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -30,12 +33,20 @@
          <children>
             <Label prefHeight="21.0" prefWidth="152.0" text="JetGram" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Segoe UI Bold" size="20.0" />
+                  <Font name="Segoe UI Bold" size="15.0" />
                </font>
+               <GridPane.margin>
+                  <Insets left="50.0" />
+               </GridPane.margin>
+            </Label>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <GridPane.margin>
                   <Insets left="20.0" />
                </GridPane.margin>
-            </Label>
+               <image>
+                  <Image url="@../resources/img/calculator.png" />
+               </image>
+            </ImageView>
          </children>
       </GridPane>
       <GridPane alignment="center" prefHeight="720.0" prefWidth="1280.0" GridPane.rowIndex="1">
@@ -57,17 +68,20 @@
                 <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #17212B;" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #17212B;">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="152.0" text="Chat room" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Segoe UI Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                  </HBox>
                   <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0E1621;" GridPane.rowIndex="1" />
                   <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="2" />
-                  <Label prefHeight="21.0" prefWidth="152.0" text="Chat room" textAlignment="CENTER" textFill="WHITE">
-                     <font>
-                        <Font name="Segoe UI Bold" size="20.0" />
-                     </font>
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Label>
                </children>
             </GridPane>
             <GridPane style="-fx-background-color: #17212B;">
@@ -75,7 +89,7 @@
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
-                <RowConstraints minHeight="10.0" percentHeight="15.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
@@ -83,7 +97,19 @@
                   <DropShadow color="#000000ab" height="0.0" radius="2.4175" spread="0.2" width="11.67" />
                </effect>
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/img/Liste.png" />
+                           </image>
+                        </ImageView>
+                        <TextField promptText="Search" style="-fx-background-color: #242F3D;" />
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                  </HBox>
                </children>
             </GridPane>
          </children>
