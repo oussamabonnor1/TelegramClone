@@ -14,9 +14,9 @@
 <?import javafx.scene.text.Font?>
 
 
-<GridPane alignment="center" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sample.Controller">
+<GridPane alignment="center" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sample.Controller">
    <columnConstraints>
-      <ColumnConstraints minWidth="10.0" percentWidth="100.0" />
+      <ColumnConstraints minWidth="10.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints minHeight="10.0" percentHeight="5.0" vgrow="ALWAYS" />
@@ -51,8 +51,8 @@
       </GridPane>
       <GridPane alignment="center" prefHeight="720.0" prefWidth="1280.0" GridPane.rowIndex="1">
          <columnConstraints>
-            <ColumnConstraints minWidth="10.0" percentWidth="30.0" />
-            <ColumnConstraints minWidth="10.0" percentWidth="80.0" />
+            <ColumnConstraints minWidth="10.0" percentWidth="25.0" />
+            <ColumnConstraints minWidth="10.0" percentWidth="93.0" prefWidth="0.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
@@ -74,27 +74,7 @@
                            <font>
                               <Font name="Segoe UI Bold" size="20.0" />
                            </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
                         </Label>
-                        <HBox alignment="CENTER_RIGHT" prefHeight="68.0" prefWidth="549.0" spacing="20.0" HBox.hgrow="ALWAYS">
-                           <children>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../resources/img/search.png" />
-                                 </image>
-                              </ImageView>
-                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../resources/img/settings.png" />
-                                 </image>
-                              </ImageView>
-                           </children>
-                           <padding>
-                              <Insets right="20.0" />
-                           </padding>
-                        </HBox>
                      </children>
                      <padding>
                         <Insets left="20.0" />
@@ -117,14 +97,14 @@
                   <DropShadow color="#000000ab" height="0.0" radius="2.4175" spread="0.2" width="11.67" />
                </effect>
                <children>
-                  <HBox alignment="CENTER_LEFT" spacing="20.0">
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                      <children>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/img/Liste.png" />
                            </image>
                         </ImageView>
-                        <TextField promptText="Search" style="-fx-background-color: #242F3D;" HBox.hgrow="ALWAYS" />
+                        <TextField promptText="Search" style="-fx-background-color: #242F3D;" />
                      </children>
                      <padding>
                         <Insets left="20.0" right="20.0" />
