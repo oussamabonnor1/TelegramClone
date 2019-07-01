@@ -1,16 +1,21 @@
 package Models;
 
-public class CellView {
+import javafx.scene.image.Image;
+
+
+public class CellViewModel {
     public String userName;
     public String lastMessage;
     public String time;
     public String notificationsNumber;
+    public Image avatarImage;
 
-    public CellView(String userName, String lastMessage, String time, String notificationsNumber) {
+    public CellViewModel(String userName, String lastMessage, String time, String notificationsNumber, Image avatarImage) {
         this.userName = userName;
         this.lastMessage = lastMessage;
         this.time = time;
         this.notificationsNumber = notificationsNumber;
+        this.avatarImage = avatarImage;
     }
 
     //region Getters & Setters
@@ -45,6 +50,14 @@ public class CellView {
 
     public void setNotificationsNumber(String notificationsNumber) {
         this.notificationsNumber = notificationsNumber;
+    }
+
+    public Image getAvatarImage() {
+        return avatarImage;
+    }
+
+    public void setAvatarImage(Image avatarImage) {
+        this.avatarImage = avatarImage;
     }
 
     //endregion

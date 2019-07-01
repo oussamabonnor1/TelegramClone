@@ -150,7 +150,7 @@
                                 <Insets left="20.0" right="20.0" />
                             </padding>
                         </HBox>
-                  <ListView fx:id="usersListView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="1" />
+                  <ListView fx:id="usersListView" style="-fx-background-color: transparent;" stylesheets="@../resources/css/cellViewCss.css" GridPane.rowIndex="1" />
                     </children>
                 </GridPane>
             </children>
