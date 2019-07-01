@@ -70,7 +70,7 @@
                     <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #17212B;">
                             <children>
-                                <Label prefHeight="21.0" prefWidth="152.0" text="Chat room" textAlignment="CENTER" textFill="WHITE">
+                                <Label fx:id="chatRoomNameLabel" prefHeight="21.0" prefWidth="152.0" text="Chat room" textAlignment="CENTER" textFill="WHITE">
                                     <font>
                                         <Font name="Segoe UI Bold" size="20.0" />
                                     </font>
@@ -80,12 +80,12 @@
                                 </Label>
                                 <HBox alignment="CENTER_RIGHT" prefHeight="68.0" prefWidth="549.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                     <children>
-                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#searchChatRoom" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../resources/img/search.png" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#settingsButtonClicked" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../resources/img/settings.png" />
                                             </image>
@@ -103,18 +103,18 @@
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0E1621;" GridPane.rowIndex="1" />
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="2">
                      <children>
-                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#attachFile" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/img/attach.png" />
                            </image>
                         </ImageView>
                         <TextField prefHeight="51.0" prefWidth="784.0" promptText="Type a message..." style="-fx-background-color: #242F3D;" HBox.hgrow="ALWAYS" />
-                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#smileyButtonClicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/img/smile.png" />
                            </image>
                         </ImageView>
-                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#vocalMessageClicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/img/mic.png" />
                            </image>
@@ -139,7 +139,7 @@
                     <children>
                         <HBox alignment="CENTER_LEFT" spacing="20.0">
                             <children>
-                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#slideMenuClicked" pickOnBounds="true" preserveRatio="true">
                                     <image>
                                         <Image url="@../resources/img/Liste.png" />
                                     </image>
@@ -150,7 +150,7 @@
                                 <Insets left="20.0" right="20.0" />
                             </padding>
                         </HBox>
-                  <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="1" />
+                  <ListView fx:id="usersListView" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="1" />
                     </children>
                 </GridPane>
             </children>
