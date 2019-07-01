@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -13,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<GridPane alignment="center" style="-fx-background-color: #fff;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="sample.Controller">
+<GridPane alignment="center" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <columnConstraints>
         <ColumnConstraints minWidth="10.0" percentWidth="100.0" />
     </columnConstraints>
@@ -101,7 +101,28 @@
                             </padding>
                         </HBox>
                         <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0E1621;" GridPane.rowIndex="1" />
-                        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="2" />
+                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="2">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/img/attach.png" />
+                           </image>
+                        </ImageView>
+                        <TextField prefHeight="51.0" prefWidth="784.0" promptText="Type a message..." style="-fx-background-color: #242F3D;" HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/img/smile.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../resources/img/mic.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding></HBox>
                     </children>
                 </GridPane>
                 <GridPane style="-fx-background-color: #17212B;">
@@ -110,8 +131,7 @@
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" percentHeight="90.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <effect>
                         <DropShadow color="#000000ab" height="0.0" radius="2.4175" spread="0.2" width="11.67" />
@@ -130,6 +150,7 @@
                                 <Insets left="20.0" right="20.0" />
                             </padding>
                         </HBox>
+                  <ListView prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="1" />
                     </children>
                 </GridPane>
             </children>
