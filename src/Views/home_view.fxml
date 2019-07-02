@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -127,7 +128,7 @@
                 </GridPane>
                 <GridPane style="-fx-background-color: #17212B;">
                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="100.0" />
                     </columnConstraints>
                     <rowConstraints>
                         <RowConstraints minHeight="10.0" percentHeight="10.0" vgrow="SOMETIMES" />
@@ -150,7 +151,12 @@
                                 <Insets left="20.0" right="20.0" />
                             </padding>
                         </HBox>
-                  <ListView fx:id="usersListView" style="-fx-background-color: transparent;" stylesheets="@../resources/css/cellViewCss.css" GridPane.rowIndex="1" />
+                  <ListView fx:id="usersListView" prefWidth="340.0" GridPane.rowIndex="1">
+                     <stylesheets>
+                        <URL value="@../resources/css/cellViewCss.css" />
+                        <URL value="@../resources/css/listViewCss.css" />
+                     </stylesheets>
+                  </ListView>
                     </children>
                 </GridPane>
             </children>

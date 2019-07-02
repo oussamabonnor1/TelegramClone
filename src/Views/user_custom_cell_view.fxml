@@ -4,17 +4,13 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox fx:id="root" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #161F29;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="root" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <VBox alignment="CENTER">
          <children>
@@ -24,15 +20,11 @@
                </image>
             </ImageView>
          </children>
+         <HBox.margin>
+            <Insets left="5.0" />
+         </HBox.margin>
       </VBox>
-      <GridPane HBox.hgrow="ALWAYS">
-         <columnConstraints>
-            <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" />
-            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" />
-         </columnConstraints>
-         <rowConstraints>
-            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-         </rowConstraints>
+      <HBox spacing="10.0" HBox.hgrow="ALWAYS">
          <children>
             <VBox spacing="10.0">
                <children>
@@ -50,21 +42,21 @@
                      </font>
                   </Label>
                </children>
-               <GridPane.margin>
-                  <Insets left="10.0" top="10.0" />
-               </GridPane.margin>
             </VBox>
-            <VBox alignment="TOP_CENTER" spacing="10.0" GridPane.columnIndex="1">
+            <VBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label fx:id="messageTimeLabel" alignment="CENTER" text="10:00" textAlignment="CENTER" textFill="#92a3af">
                      <font>
                         <Font name="Segoe UI" size="20.0" />
                      </font>
+                     <VBox.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </VBox.margin>
                   </Label>
                   <StackPane>
                      <children>
-                        <Circle fill="#4082bc" radius="22.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label fx:id="nombreMessageLabel" alignment="CENTER" prefHeight="41.0" prefWidth="33.0" text="3" textAlignment="CENTER" textFill="WHITE">
+                        <Circle fill="#4082bc" radius="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                        <Label fx:id="nombreMessageLabel" alignment="CENTER" text="3" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font name="Segoe UI Bold" size="20.0" />
                            </font>
@@ -72,11 +64,11 @@
                      </children>
                   </StackPane>
                </children>
-               <GridPane.margin>
-                  <Insets bottom="5.0" top="10.0" />
-               </GridPane.margin>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
             </VBox>
          </children>
-      </GridPane>
+      </HBox>
    </children>
 </HBox>

@@ -1,0 +1,29 @@
+.list-cell {
+    -fx-padding: 0px;
+}
+
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+    -fx-background-color: #2B5278;
+    -fx-text-fill: white;
+    -fx-padding: 0px;
+}
+
+.list-view{
+	fx-background-color: transparent;
+}
+
+.list-cell:filled { 
+    -fx-background-color: #17212B;
+    -fx-padding: 0px;
+}
+
+.list-cell:empty {
+    -fx-background-color: #17212B;
+    -fx-padding: 0px;
+}
+
+.list-cell:filled:hover {
+    -fx-background-color: #202B36;
+    -fx-text-fill: white;
+    -fx-padding: 0px;
+}
