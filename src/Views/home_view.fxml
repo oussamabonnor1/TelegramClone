@@ -71,14 +71,23 @@
                     <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #17212B;">
                             <children>
-                                <Label fx:id="chatRoomNameLabel" prefHeight="21.0" prefWidth="152.0" text="Chat room" textAlignment="CENTER" textFill="WHITE">
-                                    <font>
-                                        <Font name="Segoe UI Bold" size="20.0" />
-                                    </font>
-                                    <HBox.margin>
-                                        <Insets />
-                                    </HBox.margin>
-                                </Label>
+                        <VBox alignment="CENTER_LEFT" spacing="5.0">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <children>
+                                      <Label fx:id="chatRoomNameLabel" prefHeight="21.0" prefWidth="152.0" text="Chat room" textAlignment="CENTER" textFill="WHITE">
+                                          <font>
+                                              <Font name="Segoe UI Bold" size="20.0" />
+                                          </font>
+                                      </Label>
+                              <Label fx:id="lastMessageLabel" text="Last Seen recently..." textAlignment="CENTER" textFill="#92a3af">
+                                 <font>
+                                    <Font name="Segoe UI" size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                                 <HBox alignment="CENTER_RIGHT" prefHeight="68.0" prefWidth="549.0" spacing="20.0" HBox.hgrow="ALWAYS">
                                     <children>
                                         <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#searchChatRoom" pickOnBounds="true" preserveRatio="true">
@@ -101,7 +110,18 @@
                                 <Insets left="20.0" />
                             </padding>
                         </HBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0E1621;" GridPane.rowIndex="1" />
+                        <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: #0E1621;" GridPane.rowIndex="1">
+                     <children>
+                        <ListView fx:id="messagesListView" style="-fx-background-color: #0E1621;" VBox.vgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                           <stylesheets>
+                              <URL value="@../resources/css/messageCellViewCss.css" />
+                              <URL value="@../resources/css/usersListViewCss.css" />
+                           </stylesheets>
+                        </ListView>
+                     </children></VBox>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #17212B;" GridPane.rowIndex="2">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" onMouseClicked="#attachFile" pickOnBounds="true" preserveRatio="true">
@@ -109,7 +129,7 @@
                               <Image url="@../resources/img/attach.png" />
                            </image>
                         </ImageView>
-                        <TextField prefHeight="51.0" prefWidth="784.0" promptText="Type a message..." style="-fx-background-color: #242F3D;" HBox.hgrow="ALWAYS" />
+                        <TextField prefHeight="51.0" prefWidth="784.0" promptText="Type a message..." style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS" />
                         <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#smileyButtonClicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/img/smile.png" />
@@ -153,8 +173,8 @@
                         </HBox>
                   <ListView fx:id="usersListView" style="-fx-background-color: #17212B;" GridPane.rowIndex="1">
                      <stylesheets>
+                        <URL value="@../resources/css/usersListViewCss.css" />
                         <URL value="@../resources/css/cellViewCss.css" />
-                        <URL value="@../resources/css/listViewCss.css" />
                      </stylesheets>
                   </ListView>
                     </children>
