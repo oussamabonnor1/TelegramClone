@@ -11,14 +11,14 @@
 
 <GridPane fx:id="root" alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <columnConstraints>
-      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
       <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
-      <HBox spacing="10.0" style="-fx-background-radius: 10px; -fx-background-color: #182533;" GridPane.columnIndex="1">
+      <HBox spacing="10.0" style="-fx-background-radius: 10px; -fx-background-color: #182533;">
          <children>
             <AnchorPane HBox.hgrow="ALWAYS">
                <children>
