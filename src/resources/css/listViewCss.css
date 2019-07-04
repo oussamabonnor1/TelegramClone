@@ -28,15 +28,15 @@
 }
 
 .scroll-bar:vertical .track{
-    -fx-background-color :#513E6D;
-    -fx-border-color :#513E6D;
+    -fx-background-color :#202B36;
+    -fx-border-color :#202B36;
 }
 
 .scroll-bar:vertical .increment-button ,
 .scroll-bar:vertical .decrement-button {
     -fx-background-color :transparent;
     -fx-background-radius : 0.0em;
-    -fx-padding :0.0 10.0 0.0 0.0;
+    -fx-padding :0.0 2.0 0.0 0.0;
 }
 
  .scroll-bar:vertical .increment-arrow,
@@ -47,11 +47,11 @@
 
 
 .scroll-bar:vertical .thumb {
-    -fx-background-color :white;
-    -fx-background-radius : 2.0em;
+    -fx-background-color :rgb(44, 59, 75);
+    -fx-background-radius : 1.0em;
 }
 
 .scroll-bar:vertical .thumb:hover {
-    -fx-background-color :#60CC96;
-    -fx-background-radius : 2.0em;
+    -fx-background-color :rgb(44, 59, 75);
+    -fx-background-radius : 1.0em;
 }

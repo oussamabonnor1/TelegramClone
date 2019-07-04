@@ -138,7 +138,7 @@
                         <DropShadow color="#000000ab" height="0.0" radius="2.4175" spread="0.2" width="11.67" />
                     </effect>
                     <children>
-                        <HBox alignment="CENTER_LEFT" spacing="20.0">
+                        <HBox alignment="CENTER_LEFT" spacing="20.0" style="-fx-background-color: #17212B;">
                             <children>
                                 <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#slideMenuClicked" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -151,7 +151,7 @@
                                 <Insets left="20.0" right="20.0" />
                             </padding>
                         </HBox>
-                  <ListView fx:id="usersListView" prefWidth="340.0" GridPane.rowIndex="1">
+                  <ListView fx:id="usersListView" style="-fx-background-color: #17212B;" GridPane.rowIndex="1">
                      <stylesheets>
                         <URL value="@../resources/css/cellViewCss.css" />
                         <URL value="@../resources/css/listViewCss.css" />

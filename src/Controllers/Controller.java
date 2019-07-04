@@ -34,7 +34,7 @@ public class Controller implements Initializable {
         usersListView.setItems(cellsList);
         usersListView.setCellFactory(param -> new UserCustomCellController() {
             {
-                prefWidthProperty().bind(usersListView.widthProperty().subtract(1)); // 1
+                prefWidthProperty().bind(usersListView.widthProperty().subtract(0)); // 1
             }
         });
     }

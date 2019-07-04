@@ -14,7 +14,7 @@ import java.io.IOException;
 public class UserCustomCellController extends ListCell<CellViewModel> {
 
     @FXML
-    private HBox root;
+    private GridPane root;
 
     @FXML
     private ImageView avatarImage;

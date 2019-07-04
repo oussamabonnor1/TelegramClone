@@ -4,13 +4,24 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="root" alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="10.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+
+<GridPane fx:id="root" alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="20.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="80.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+   </rowConstraints>
    <children>
       <VBox alignment="CENTER">
          <children>
@@ -20,13 +31,10 @@
                </image>
             </ImageView>
          </children>
-         <HBox.margin>
-            <Insets left="5.0" />
-         </HBox.margin>
       </VBox>
-      <HBox spacing="10.0" HBox.hgrow="ALWAYS">
+      <HBox spacing="10.0" GridPane.columnIndex="1">
          <children>
-            <VBox spacing="10.0">
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
                <children>
                   <Label fx:id="userNameLabel" text="User name" textAlignment="CENTER" textFill="WHITE">
                      <font>
@@ -43,7 +51,7 @@
                   </Label>
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" spacing="10.0" HBox.hgrow="ALWAYS">
+            <VBox alignment="TOP_CENTER" spacing="10.0">
                <children>
                   <Label fx:id="messageTimeLabel" alignment="CENTER" text="10:00" textAlignment="CENTER" textFill="#92a3af">
                      <font>
@@ -71,4 +79,4 @@
          </children>
       </HBox>
    </children>
-</HBox>
+</GridPane>
