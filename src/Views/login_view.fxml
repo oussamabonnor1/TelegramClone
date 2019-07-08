@@ -9,6 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -29,11 +30,30 @@
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#minimizeApp" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/minimize.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#closeApp" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/quitButton.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
       </GridPane>
       <GridPane alignment="center" prefHeight="720.0" prefWidth="1280.0" GridPane.rowIndex="1">
          <columnConstraints>
-            <ColumnConstraints minWidth="10.0" percentWidth="40.0" />
-            <ColumnConstraints minWidth="10.0" percentWidth="60.0" />
+            <ColumnConstraints minWidth="10.0" percentWidth="43.0" />
+            <ColumnConstraints minWidth="10.0" percentWidth="57.0" />
          </columnConstraints>
          <rowConstraints>
             <RowConstraints minHeight="10.0" percentHeight="100.0" vgrow="ALWAYS" />
@@ -58,24 +78,24 @@
                   </Label>
                   <VBox alignment="CENTER_LEFT" spacing="10.0">
                      <children>
-                        <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Free and powerful." textFill="#7f9191">
+                        <JFXCheckBox checkedColor="#2f6ea5" focusTraversable="false" selected="true" text="Free and powerful." textFill="#7f9191">
                            <font>
                               <Font size="22.0" />
                            </font>
                         </JFXCheckBox>
-                        <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Fast and secure." textFill="#7f9191">
+                        <JFXCheckBox checkedColor="#2f6ea5" focusTraversable="false" selected="true" text="Fast and secure." textFill="#7f9191">
                            <font>
                               <Font size="22.0" />
                            </font>
                         </JFXCheckBox>
-                        <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Fun and stylish." textFill="#7f9191">
+                        <JFXCheckBox checkedColor="#2f6ea5" focusTraversable="false" selected="true" text="Fun and stylish." textFill="#7f9191">
                            <font>
                               <Font size="22.0" />
                            </font>
                         </JFXCheckBox>
                      </children>
                      <VBox.margin>
-                        <Insets left="150.0" />
+                        <Insets left="165.0" />
                      </VBox.margin>
                   </VBox>
                </children>
@@ -88,8 +108,8 @@
             </VBox>
             <GridPane GridPane.columnIndex="1">
               <columnConstraints>
-                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="30.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="70.0" />
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="24.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="76.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" percentHeight="100.0" vgrow="ALWAYS" />
@@ -104,7 +124,7 @@
                         </Label>
                         <JFXTextField focusColor="WHITE" promptText="User name" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3" />
                         <JFXTextField focusColor="WHITE" promptText="Phone Number" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3" />
-                        <JFXButton prefHeight="66.0" prefWidth="438.0" ripplerFill="WHITE" style="-fx-background-color: #202D3A;" text="Sign up" textFill="WHITE">
+                        <JFXButton onAction="#signUp" prefHeight="66.0" prefWidth="473.0" ripplerFill="WHITE" style="-fx-background-color: #202D3A;" text="Sign up" textFill="WHITE">
                            <font>
                               <Font name="Calibri" size="25.0" />
                            </font>
