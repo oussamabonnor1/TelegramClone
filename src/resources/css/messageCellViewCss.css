@@ -3,7 +3,7 @@
 }
 
 .list-cell:filled:selected:focused, .list-cell:filled:selected {
-    -fx-background-color: #2E70A5;
+    -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-padding: 0px;
 }
