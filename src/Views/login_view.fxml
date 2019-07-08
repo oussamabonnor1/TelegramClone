@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -68,57 +68,55 @@
                         <Font name="Segoe UI Bold" size="36.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" text="Weclome to the official JetGram Desktop app!" textAlignment="CENTER" textFill="#7f9191" wrapText="true">
+                  <Label alignment="CENTER" prefHeight="67.0" prefWidth="357.0" text="Weclome to the official JetGram Desktop app!" textAlignment="CENTER" textFill="#7f9191" wrapText="true">
                      <font>
                         <Font name="Segoe UI" size="22.0" />
                      </font>
                   </Label>
-                  <VBox spacing="10.0">
+                  <VBox alignment="CENTER_LEFT" spacing="10.0">
                      <children>
-                        <HBox alignment="CENTER_LEFT">
-                           <children>
-                              <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Free and powerful" textFill="#7f9191">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="100.0" />
-                                 </HBox.margin>
-                              </JFXCheckBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT">
-                           <children>
-                              <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Fast and secure" textFill="#7f9191">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="100.0" />
-                                 </HBox.margin>
-                              </JFXCheckBox>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_LEFT">
-                           <children>
-                              <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Fun and stylish" textFill="#7f9191">
-                                 <font>
-                                    <Font size="22.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="100.0" />
-                                 </HBox.margin>
-                              </JFXCheckBox>
-                           </children>
-                        </HBox>
+                        <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Free and powerful." textFill="#7f9191">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Fast and secure." textFill="#7f9191">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <JFXCheckBox checkedColor="#2f6ea5" selected="true" text="Fun and stylish." textFill="#7f9191">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </JFXCheckBox>
                      </children>
                      <VBox.margin>
-                        <Insets top="20.0" />
+                        <Insets left="160.0" />
                      </VBox.margin>
                   </VBox>
                </children>
+               <padding>
+                  <Insets bottom="50.0" />
+               </padding>
             </VBox>
-            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" />
+            <GridPane GridPane.columnIndex="1">
+              <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" percentWidth="30.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="70.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" percentHeight="100.0" vgrow="ALWAYS" />
+              </rowConstraints>
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1">
+                     <children>
+                        <JFXTextField focusColor="WHITE" unFocusColor="#7f9191" />
+                        <JFXTextField focusColor="WHITE" unFocusColor="#7f9191" />
+                     </children>
+                  </VBox>
+               </children>
+            </GridPane>
          </children>
       </GridPane>
    </children>
