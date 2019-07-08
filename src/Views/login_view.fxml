@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
@@ -28,24 +29,6 @@
          <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
          </rowConstraints>
-         <children>
-            <Label prefHeight="21.0" prefWidth="152.0" text="JetGram" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Segoe UI Bold" size="15.0" />
-               </font>
-               <GridPane.margin>
-                  <Insets left="50.0" />
-               </GridPane.margin>
-            </Label>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <GridPane.margin>
-                  <Insets left="20.0" />
-               </GridPane.margin>
-               <image>
-                  <Image url="@../resources/img/calculator.png" />
-               </image>
-            </ImageView>
-         </children>
       </GridPane>
       <GridPane alignment="center" prefHeight="720.0" prefWidth="1280.0" GridPane.rowIndex="1">
          <columnConstraints>
@@ -56,11 +39,11 @@
             <RowConstraints minHeight="10.0" percentHeight="100.0" vgrow="ALWAYS" />
          </rowConstraints>
          <children>
-            <VBox alignment="CENTER" spacing="30.0">
+            <VBox alignment="CENTER" spacing="20.0">
                <children>
-                  <ImageView fitHeight="75.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/img/jetlight%20logo.png" />
+                        <Image url="@../resources/img/email.png" />
                      </image>
                   </ImageView>
                   <Label text="JetGram" textFill="#92a3af">
@@ -92,13 +75,16 @@
                         </JFXCheckBox>
                      </children>
                      <VBox.margin>
-                        <Insets left="160.0" />
+                        <Insets left="150.0" />
                      </VBox.margin>
                   </VBox>
                </children>
                <padding>
                   <Insets bottom="50.0" />
                </padding>
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
             </VBox>
             <GridPane GridPane.columnIndex="1">
               <columnConstraints>
@@ -109,11 +95,27 @@
                 <RowConstraints minHeight="10.0" percentHeight="100.0" vgrow="ALWAYS" />
               </rowConstraints>
                <children>
-                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1">
+                  <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="20.0" GridPane.columnIndex="1">
                      <children>
-                        <JFXTextField focusColor="WHITE" unFocusColor="#7f9191" />
-                        <JFXTextField focusColor="WHITE" unFocusColor="#7f9191" />
+                        <Label text="Create an account" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="36.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField focusColor="WHITE" promptText="User name" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3" />
+                        <JFXTextField focusColor="WHITE" promptText="Phone Number" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3" />
+                        <JFXButton prefHeight="66.0" prefWidth="438.0" ripplerFill="WHITE" style="-fx-background-color: #202D3A;" text="Sign up" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri" size="25.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </JFXButton>
                      </children>
+                     <padding>
+                        <Insets left="50.0" right="50.0" />
+                     </padding>
                   </VBox>
                </children>
             </GridPane>
