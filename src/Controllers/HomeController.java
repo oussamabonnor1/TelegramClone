@@ -83,4 +83,15 @@ public class HomeController implements Initializable {
 
     }
 
+    @FXML
+    void closeApp(MouseEvent event) {
+        Main.stage.close();
+    }
+
+    @FXML
+    void minimizeApp(MouseEvent event) {
+        Main.stage.setIconified(true);
+    }
+
+
 }

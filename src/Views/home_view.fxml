@@ -24,32 +24,33 @@
         <RowConstraints minHeight="10.0" percentHeight="95.0" vgrow="ALWAYS" />
     </rowConstraints>
     <children>
-        <GridPane style="-fx-background-color: #1F2936;">
-            <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            </rowConstraints>
-            <children>
-                <Label prefHeight="21.0" prefWidth="152.0" text="JetGram" textAlignment="CENTER" textFill="WHITE">
-                    <font>
-                        <Font name="Segoe UI Bold" size="15.0" />
-                    </font>
-                    <GridPane.margin>
-                        <Insets left="50.0" />
-                    </GridPane.margin>
-                </Label>
-                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                    <GridPane.margin>
-                        <Insets left="20.0" />
-                    </GridPane.margin>
-                    <image>
-                        <Image url="@../resources/img/calculator.png" />
-                    </image>
-                </ImageView>
-            </children>
-        </GridPane>
+      <GridPane style="-fx-background-color: #1F2936;">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#minimizeApp" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/minimize.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#closeApp" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/img/quitButton.png" />
+                     </image>
+                  </ImageView>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </GridPane>
         <GridPane alignment="center" prefHeight="720.0" prefWidth="1280.0" GridPane.rowIndex="1">
             <columnConstraints>
                 <ColumnConstraints minWidth="10.0" percentWidth="30.0" />
