@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -20,15 +19,11 @@
    <children>
       <HBox spacing="10.0" style="-fx-background-radius: 10px; -fx-background-color: #182533;">
          <children>
-            <AnchorPane HBox.hgrow="ALWAYS">
-               <children>
-                  <Label fx:id="messageLabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" text="MessageMessage" textFill="WHITE" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <font>
-                        <Font name="Segoe UI" size="18.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
+            <Label fx:id="messageLabel" alignment="TOP_LEFT" maxHeight="-Infinity" maxWidth="400.0" text="MessageMessage" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Segoe UI" size="18.0" />
+               </font>
+            </Label>
             <Label fx:id="messageTimeLabel" alignment="CENTER" text="10:00" textAlignment="CENTER" textFill="#92a3af">
                <font>
                   <Font name="Segoe UI" size="20.0" />

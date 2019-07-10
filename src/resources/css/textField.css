@@ -4,3 +4,8 @@
     -jfx-unfocus-color: WHITE;
     -fx-text-inner-color: WHITE;
 }
+
+.text-field {
+    -fx-prompt-text-fill: WHITE;
+    -fx-text-inner-color: WHITE;
+}

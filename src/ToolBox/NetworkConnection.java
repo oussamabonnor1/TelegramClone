@@ -9,26 +9,30 @@ import java.net.Socket;
 import java.util.function.Consumer;
 
 public class NetworkConnection {
+    private ConnectionThread connection = new ConnectionThread();
     public Consumer<Serializable> receiveCallBack;
     public String ip;
     public boolean isServer;
     public int port;
 
 
-    public NetworkConnection(Consumer<Serializable> receiveCallBack) {
+    public NetworkConnection(Consumer<Serializable> receiveCallBack, String ip, boolean isServer, int port) {
         this.receiveCallBack = receiveCallBack;
+        this.ip = ip;
+        this.isServer = isServer;
+        this.port = port;
     }
 
     public void openConnection() {
-
+        connection.start();
     }
 
-    public void sendData(Serializable data) {
-
+    public void sendData(Serializable data) throws IOException {
+        connection.outputStream.writeObject(data);
     }
 
-    public void closeConnection() {
-
+    public void closeConnection() throws IOException {
+        connection.socket.close();
     }
 
     private class ConnectionThread extends Thread {
@@ -47,8 +51,12 @@ public class NetworkConnection {
                 this.socket = socket;
                 this.outputStream = outputStream;
 
+                while (true) {
+                    Serializable data = (Serializable) inputStream.readObject();
+                    receiveCallBack.accept(data);
+                }
 
-            } catch (IOException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
         }

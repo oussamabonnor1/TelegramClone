@@ -2,15 +2,20 @@ package Controllers;
 
 import Models.CellViewModel;
 import Models.MessageViewModel;
+import ToolBox.NetworkConnection;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,6 +23,10 @@ public class HomeController implements Initializable {
 
     @FXML
     private Label chatRoomNameLabel;
+    @FXML
+    private TextField messageField;
+
+    NetworkConnection connection;
 
     @FXML
     private ListView<CellViewModel> usersListView;
@@ -49,6 +58,25 @@ public class HomeController implements Initializable {
                 prefWidthProperty().bind(messagesListView.widthProperty().subtract(0)); // 1
             }
         });
+
+        connection = new NetworkConnection(data -> Platform.runLater(() -> {
+            messagesList.add(new MessageViewModel(data.toString(), "00:00", false));
+        }), "127.0.0.1", false, 55555);
+        connection.openConnection();
+
+        chatRoomNameLabel.setText(connection.isServer ? "Oussama Bonnor" : "Amine Smahi");
+    }
+
+    @FXML
+    void sendMessage(ActionEvent event) {
+        try {
+            System.out.println(connection.isServer);
+            messagesList.add(new MessageViewModel(messageField.getText(), "00:00", true));
+            connection.sendData(messageField.getText());
+            messageField.clear();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
@@ -83,7 +111,12 @@ public class HomeController implements Initializable {
 
     @FXML
     void closeApp(MouseEvent event) {
-        Main.stage.close();
+        try {
+            connection.closeConnection();
+            Main.stage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

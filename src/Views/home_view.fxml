@@ -72,12 +72,12 @@
                     <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #17212B;">
                             <children>
-                        <VBox alignment="CENTER_LEFT" spacing="5.0">
+                        <VBox alignment="CENTER_LEFT" spacing="5.0" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
                            <children>
-                                      <Label fx:id="chatRoomNameLabel" prefHeight="21.0" prefWidth="152.0" text="Chat room" textAlignment="CENTER" textFill="WHITE">
+                                      <Label fx:id="chatRoomNameLabel" text="Chat room" textAlignment="CENTER" textFill="WHITE">
                                           <font>
                                               <Font name="Segoe UI Bold" size="20.0" />
                                           </font>
@@ -89,7 +89,7 @@
                               </Label>
                            </children>
                         </VBox>
-                                <HBox alignment="CENTER_RIGHT" prefHeight="68.0" prefWidth="549.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                                <HBox alignment="CENTER_RIGHT" prefHeight="68.0" prefWidth="549.0" spacing="20.0">
                                     <children>
                                         <ImageView fitHeight="40.0" fitWidth="40.0" onMouseClicked="#searchChatRoom" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -130,7 +130,7 @@
                               <Image url="@../resources/img/attach.png" />
                            </image>
                         </ImageView>
-                        <TextField prefHeight="51.0" prefWidth="784.0" promptText="Type a message..." style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS" />
+                        <TextField fx:id="messageField" onAction="#sendMessage" prefHeight="51.0" prefWidth="784.0" promptText="Type a message..." style="-fx-background-color: transparent;" stylesheets="@../resources/css/textField.css" HBox.hgrow="ALWAYS" />
                         <ImageView fitHeight="35.0" fitWidth="35.0" onMouseClicked="#smileyButtonClicked" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../resources/img/smile.png" />
