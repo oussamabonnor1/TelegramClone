@@ -6,6 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <GridPane fx:id="root" alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
@@ -24,17 +25,21 @@
                   <Font name="Segoe UI" size="18.0" />
                </font>
             </Label>
-            <Label fx:id="messageTimeLabel" alignment="CENTER" text="10:00" textAlignment="CENTER" textFill="#92a3af">
-               <font>
-                  <Font name="Segoe UI" size="20.0" />
-               </font>
+            <VBox alignment="BOTTOM_CENTER">
                <HBox.margin>
                   <Insets />
                </HBox.margin>
-               <padding>
-                  <Insets top="5.0" />
-               </padding>
-            </Label>
+               <children>
+                  <Label fx:id="messageTimeLabel" alignment="CENTER" text="10:00" textAlignment="CENTER" textFill="#92a3af">
+                     <font>
+                        <Font name="Segoe UI" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets top="5.0" />
+                     </padding>
+                  </Label>
+               </children>
+            </VBox>
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

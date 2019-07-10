@@ -12,12 +12,12 @@
 	fx-background-color: transparent;
 }
 
-.list-cell:filled { 
+.list-cell:filled {
     -fx-background-color: #0E1621;
-    -fx-padding: 0px;
+    -fx-padding: 2px;
 }
 
 .list-cell:empty {
     -fx-background-color: #0E1621;
-    -fx-padding: 0px;
+    -fx-padding: 2px;
 }

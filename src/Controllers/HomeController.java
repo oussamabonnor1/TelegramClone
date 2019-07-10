@@ -61,6 +61,7 @@ public class HomeController implements Initializable {
 
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
             messagesList.add(new MessageViewModel(data.toString(), "00:00", false));
+            messagesListView.scrollTo(messagesList.size());
         }), "127.0.0.1", false, 55555);
         connection.openConnection();
 
@@ -74,6 +75,7 @@ public class HomeController implements Initializable {
             messagesList.add(new MessageViewModel(messageField.getText(), "00:00", true));
             connection.sendData(messageField.getText());
             messageField.clear();
+            messagesListView.scrollTo(messagesList.size());
         } catch (IOException e) {
             e.printStackTrace();
         }
