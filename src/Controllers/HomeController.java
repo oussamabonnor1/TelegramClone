@@ -3,9 +3,8 @@ package Controllers;
 import Models.CellViewModel;
 import Models.MessageViewModel;
 import ToolBox.NetworkConnection;
+import ToolBox.Utilities;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -41,6 +40,10 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        for (int i = 0; i < 10; i++) {
+            cellsList.add(new CellViewModel("user " + i, "message " + i,
+                    Utilities.getCurrentTime(), i + "", new Image("resources/img/smile.png")));
+        }
 
         usersListView.setItems(cellsList);
         usersListView.setCellFactory(param -> new UserCustomCellController() {
@@ -56,11 +59,8 @@ public class HomeController implements Initializable {
             }
         });
 
-        usersListView.onMouseClickedProperty().addListener(new ChangeListener<EventHandler<? super MouseEvent>>() {
-            @Override
-            public void changed(ObservableValue<? extends EventHandler<? super MouseEvent>> observable, EventHandler<? super MouseEvent> oldValue, EventHandler<? super MouseEvent> newValue) {
+        usersListView.setOnMouseClicked(event -> {
 
-            }
         });
 
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
