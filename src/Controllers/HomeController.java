@@ -3,12 +3,10 @@ package Controllers;
 import Models.CellViewModel;
 import Models.MessageViewModel;
 import ToolBox.NetworkConnection;
-import ToolBox.Utilities;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -20,6 +18,8 @@ import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import static ToolBox.Utilities.*;
 
 public class HomeController implements Initializable {
 
@@ -36,13 +36,13 @@ public class HomeController implements Initializable {
     private ListView<MessageViewModel> messagesListView;
 
     private ObservableList<CellViewModel> cellsList = FXCollections.observableArrayList();
-    private ObservableList<MessageViewModel> messagesList = FXCollections.observableArrayList();
+    CellViewModel currentlySelectedUser;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (int i = 0; i < 10; i++) {
             cellsList.add(new CellViewModel("user " + i, "message " + i,
-                    Utilities.getCurrentTime(), i + "", new Image("resources/img/smile.png")));
+                    getCurrentTime(), i % 2 == 0 ? 0 + "" : 3 + "", new Image("resources/img/smile.png")));
         }
 
         usersListView.setItems(cellsList);
@@ -51,35 +51,34 @@ public class HomeController implements Initializable {
                 prefWidthProperty().bind(usersListView.widthProperty().subtract(0)); // 1
             }
         });
-
-        messagesListView.setItems(messagesList);
         messagesListView.setCellFactory(param -> new MessageCustomCellController() {
             {
                 prefWidthProperty().bind(messagesListView.widthProperty().subtract(0)); // 1
             }
         });
-
-        usersListView.setOnMouseClicked(event -> {
-
-        });
+        usersListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+                    currentlySelectedUser = usersListView.getSelectionModel().getSelectedItem();
+                    messagesListView.setItems(currentlySelectedUser.messagesList);
+                    chatRoomNameLabel.setText(currentlySelectedUser.userName);
+                }
+        );
 
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
-            messagesList.add(new MessageViewModel(data.toString(), "00:00", false));
-            messagesListView.scrollTo(messagesList.size());
+            currentlySelectedUser.messagesList.add(new MessageViewModel(data.toString(), getCurrentTime(), false));
+            messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
         }), "127.0.0.1", false, 55555);
         connection.openConnection();
 
-        chatRoomNameLabel.setText(connection.isServer ? "Oussama Bonnor" : "Amine Smahi");
+        usersListView.getSelectionModel().select(0);
     }
 
     @FXML
     void sendMessage(ActionEvent event) {
         try {
-            System.out.println(connection.isServer);
-            messagesList.add(new MessageViewModel(messageField.getText(), "00:00", true));
+            currentlySelectedUser.messagesList.add(new MessageViewModel(messageField.getText(), "00:00", true));
             connection.sendData(messageField.getText());
             messageField.clear();
-            messagesListView.scrollTo(messagesList.size());
+            messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,5 +1,7 @@
 package Models;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 
 
@@ -9,6 +11,7 @@ public class CellViewModel {
     public String time;
     public String notificationsNumber;
     public Image avatarImage;
+    public ObservableList<MessageViewModel> messagesList;
 
     public CellViewModel(String userName, String lastMessage, String time, String notificationsNumber, Image avatarImage) {
         this.userName = userName;
@@ -16,6 +19,7 @@ public class CellViewModel {
         this.time = time;
         this.notificationsNumber = notificationsNumber;
         this.avatarImage = avatarImage;
+        messagesList = FXCollections.observableArrayList();
     }
 
     //region Getters & Setters
