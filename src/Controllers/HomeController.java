@@ -4,9 +4,12 @@ import Models.CellViewModel;
 import Models.MessageViewModel;
 import ToolBox.NetworkConnection;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -38,13 +41,7 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int i = 0; i < 10; i++) {
-            cellsList.add(new CellViewModel("user " + i, "message " + i,
-                    "0" + i + ":00", i + "", new Image("resources/img/smile.png")));
-        }
-        for (int i = 0; i < 5; i++) {
-            messagesList.add(new MessageViewModel("message " + i, "0" + i + ":00", i % 2 == 1));
-        }
+
         usersListView.setItems(cellsList);
         usersListView.setCellFactory(param -> new UserCustomCellController() {
             {
@@ -56,6 +53,13 @@ public class HomeController implements Initializable {
         messagesListView.setCellFactory(param -> new MessageCustomCellController() {
             {
                 prefWidthProperty().bind(messagesListView.widthProperty().subtract(0)); // 1
+            }
+        });
+
+        usersListView.onMouseClickedProperty().addListener(new ChangeListener<EventHandler<? super MouseEvent>>() {
+            @Override
+            public void changed(ObservableValue<? extends EventHandler<? super MouseEvent>> observable, EventHandler<? super MouseEvent> oldValue, EventHandler<? super MouseEvent> newValue) {
+
             }
         });
 
