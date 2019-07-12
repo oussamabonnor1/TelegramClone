@@ -1,5 +1,7 @@
 package Models;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
@@ -9,7 +11,7 @@ public class CellViewModel {
     public String userName;
     public String lastMessage;
     public String time;
-    public String notificationsNumber;
+    public SimpleStringProperty notificationsNumber;
     public Image avatarImage;
     public ObservableList<MessageViewModel> messagesList;
 
@@ -17,7 +19,7 @@ public class CellViewModel {
         this.userName = userName;
         this.lastMessage = lastMessage;
         this.time = time;
-        this.notificationsNumber = notificationsNumber;
+        this.notificationsNumber = new SimpleStringProperty(notificationsNumber);
         this.avatarImage = avatarImage;
         messagesList = FXCollections.observableArrayList();
     }
@@ -49,11 +51,15 @@ public class CellViewModel {
     }
 
     public String getNotificationsNumber() {
+        return notificationsNumber.get();
+    }
+
+    public SimpleStringProperty notificationsNumberProperty() {
         return notificationsNumber;
     }
 
     public void setNotificationsNumber(String notificationsNumber) {
-        this.notificationsNumber = notificationsNumber;
+        this.notificationsNumber.set(notificationsNumber);
     }
 
     public Image getAvatarImage() {

@@ -66,6 +66,7 @@ public class HomeController implements Initializable {
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
             currentlySelectedUser.messagesList.add(new MessageViewModel(data.toString(), getCurrentTime(), false));
             messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
+            currentlySelectedUser.notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
         }), "127.0.0.1", false, 55555);
         connection.openConnection();
 
