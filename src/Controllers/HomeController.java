@@ -20,6 +20,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import static ToolBox.Utilities.*;
+import static ToolBox.Utilities.getCurrentTime;
 
 public class HomeController implements Initializable {
 
@@ -42,7 +43,7 @@ public class HomeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         for (int i = 0; i < 10; i++) {
             cellsList.add(new CellViewModel("user " + i, "message " + i,
-                    getCurrentTime(), i % 2 == 0 ? 0 + "" : 3 + "", new Image("resources/img/smile.png")));
+                    getCurrentTime(), 0 + "", new Image("resources/img/smile.png")));
         }
 
         usersListView.setItems(cellsList);
@@ -64,6 +65,7 @@ public class HomeController implements Initializable {
         );
 
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
+            currentlySelectedUser.time.setValue(getCurrentTime());
             currentlySelectedUser.messagesList.add(new MessageViewModel(data.toString(), getCurrentTime(), false));
             messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
             currentlySelectedUser.notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
@@ -76,7 +78,7 @@ public class HomeController implements Initializable {
     @FXML
     void sendMessage(ActionEvent event) {
         try {
-            currentlySelectedUser.messagesList.add(new MessageViewModel(messageField.getText(), "00:00", true));
+            currentlySelectedUser.messagesList.add(new MessageViewModel(messageField.getText(), getCurrentTime(), true));
             connection.sendData(messageField.getText());
             messageField.clear();
             messagesListView.scrollTo(currentlySelectedUser.messagesList.size());

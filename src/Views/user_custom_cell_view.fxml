@@ -60,7 +60,7 @@
                         <Insets left="5.0" right="5.0" />
                      </VBox.margin>
                   </Label>
-                  <StackPane fx:id="notificationPanel">
+                  <StackPane fx:id="notificationPanel" visible="false">
                      <children>
                         <Circle fill="#4082bc" radius="18.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
                         <Label fx:id="nombreMessageLabel" alignment="CENTER" text="3" textAlignment="CENTER" textFill="WHITE">

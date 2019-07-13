@@ -10,7 +10,7 @@ import javafx.scene.image.Image;
 public class CellViewModel {
     public String userName;
     public String lastMessage;
-    public String time;
+    public SimpleStringProperty time;
     public SimpleStringProperty notificationsNumber;
     public Image avatarImage;
     public ObservableList<MessageViewModel> messagesList;
@@ -18,7 +18,7 @@ public class CellViewModel {
     public CellViewModel(String userName, String lastMessage, String time, String notificationsNumber, Image avatarImage) {
         this.userName = userName;
         this.lastMessage = lastMessage;
-        this.time = time;
+        this.time = new SimpleStringProperty(time);
         this.notificationsNumber = new SimpleStringProperty(notificationsNumber);
         this.avatarImage = avatarImage;
         messagesList = FXCollections.observableArrayList();
@@ -42,12 +42,8 @@ public class CellViewModel {
         this.lastMessage = lastMessage;
     }
 
-    public String getTime() {
+    public SimpleStringProperty timeProperty() {
         return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
     }
 
     public String getNotificationsNumber() {
