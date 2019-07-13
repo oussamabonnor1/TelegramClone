@@ -24,29 +24,34 @@ import static ToolBox.Utilities.getCurrentTime;
 public class HomeController implements Initializable {
 
     @FXML
+    private Label userNameLabel;
+    @FXML
     private Label chatRoomNameLabel;
     @FXML
     private TextField messageField;
-
-    NetworkConnection connection;
-
     @FXML
     private ListView<UserViewModel> usersListView;
     @FXML
     private ListView<MessageViewModel> messagesListView;
 
+    NetworkConnection connection;
     private ObservableList<UserViewModel> usersList = FXCollections.observableArrayList();
     UserViewModel currentlySelectedUser, localUser;
     Image userImage = new Image("resources/img/smile.png");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        for (int i = 0; i < 10; i++) {
+        usersList.add(new UserViewModel("Oussama", "message ",
+                getCurrentTime(), 0 + "", userImage));
+        usersList.add(new UserViewModel("Latifa", "message ",
+                getCurrentTime(), 0 + "", userImage));
+        for (int i = 2; i < 10; i++) {
             usersList.add(new UserViewModel("user " + i, "message " + i,
                     getCurrentTime(), 0 + "", userImage));
         }
 
         localUser = new UserViewModel(LogInController.userName, "message", getCurrentTime(), 0 + "", userImage);
+        userNameLabel.setText(localUser.getUserName());
 
         usersListView.setItems(usersList);
         usersListView.setCellFactory(param -> new UserCustomCellController() {
@@ -68,13 +73,18 @@ public class HomeController implements Initializable {
         );
 
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
-            String[] messageInfo = data.toString().split(">"); //User and message
-            UserViewModel user = usersList.get(findUser(messageInfo[0]));
-            user.time.setValue(getCurrentTime());
-            user.lastMessage = messageInfo[1];
-            user.messagesList.add(new MessageViewModel(messageInfo[1], getCurrentTime(), false));
-            messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
-            user.notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
+            String[] messageInfo = data.toString().split(">"); //Sender and Receiver and message
+            if (messageInfo[1].matches(localUser.getUserName())) {
+
+                int userSender = findUser(messageInfo[0]);
+                usersList.get(userSender).time.setValue(getCurrentTime());
+                usersList.get(userSender).lastMessage = messageInfo[2];
+                usersList.get(userSender).messagesList.add(new MessageViewModel(messageInfo[2], getCurrentTime(), false));
+                messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
+                usersList.get(userSender).notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
+                System.out.println("Sender: "+usersList.get(userSender).userName
+                +"\n"+"Receiver: "+localUser.getUserName());
+            }
         }), "127.0.0.1", false, 55555);
         connection.openConnection();
 
@@ -86,7 +96,8 @@ public class HomeController implements Initializable {
     void sendMessage(ActionEvent event) {
         try {
             currentlySelectedUser.messagesList.add(new MessageViewModel(messageField.getText(), getCurrentTime(), true));
-            connection.sendData(localUser.getUserName() + ">" + messageField.getText());
+            //sending message as: sender>receiver>data
+            connection.sendData(localUser.getUserName() + ">" + currentlySelectedUser.getUserName() + ">" + messageField.getText());
             messageField.clear();
             messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
         } catch (IOException e) {
