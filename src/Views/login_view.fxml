@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -12,6 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <GridPane alignment="center" stylesheets="@../resources/css/imageBackground.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogInController">
@@ -79,29 +79,65 @@
                   </Label>
                   <VBox alignment="CENTER_LEFT" spacing="10.0">
                      <children>
-                        <JFXCheckBox checkedColor="#2f6ea5" focusTraversable="false" selected="true" text="Free and powerful." textFill="#7f9191">
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                        </JFXCheckBox>
-                        <JFXCheckBox checkedColor="#2f6ea5" focusTraversable="false" selected="true" text="Fast and secure." textFill="#7f9191">
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                        </JFXCheckBox>
-                        <JFXCheckBox checkedColor="#2f6ea5" focusTraversable="false" selected="true" text="Fun and stylish." textFill="#7f9191">
-                           <font>
-                              <Font size="22.0" />
-                           </font>
-                        </JFXCheckBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Circle fill="WHITE" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Circle>
+                              <Label alignment="CENTER" text="Free and powerful." textAlignment="CENTER" textFill="#7f9191" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Circle fill="WHITE" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Circle>
+                              <Label alignment="CENTER" text="Fast and secure." textAlignment="CENTER" textFill="#7f9191" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                           <children>
+                              <Circle fill="WHITE" radius="5.0" stroke="TRANSPARENT" strokeType="INSIDE" strokeWidth="0.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Circle>
+                              <Label alignment="CENTER" text="Fun and stylish." textAlignment="CENTER" textFill="#7f9191" wrapText="true">
+                                 <font>
+                                    <Font name="Segoe UI" size="22.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets left="5.0" />
+                           </padding>
+                        </HBox>
                      </children>
                      <VBox.margin>
-                        <Insets left="165.0" />
+                        <Insets left="165.0" top="20.0" />
                      </VBox.margin>
                   </VBox>
                </children>
                <padding>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="20.0" top="20.0" />
                </padding>
                <GridPane.margin>
                   <Insets left="20.0" />
