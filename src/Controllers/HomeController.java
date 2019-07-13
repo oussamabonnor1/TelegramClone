@@ -78,14 +78,14 @@ public class HomeController implements Initializable {
 
                 int userSender = findUser(messageInfo[0]);
                 usersList.get(userSender).time.setValue(getCurrentTime());
-                usersList.get(userSender).lastMessage = messageInfo[2];
+                usersList.get(userSender).lastMessage.setValue(messageInfo[2]);
                 usersList.get(userSender).messagesList.add(new MessageViewModel(messageInfo[2], getCurrentTime(), false));
                 messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
                 usersList.get(userSender).notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
-                System.out.println("Sender: "+usersList.get(userSender).userName
-                +"\n"+"Receiver: "+localUser.getUserName());
+                System.out.println("Sender: " + usersList.get(userSender).userName
+                        + "\n" + "Receiver: " + localUser.getUserName());
             }
-        }), "127.0.0.1", false, 55555);
+        }), "127.0.0.1", true, 55555);
         connection.openConnection();
 
         usersListView.getSelectionModel().select(0);

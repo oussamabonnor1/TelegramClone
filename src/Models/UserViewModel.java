@@ -9,7 +9,7 @@ import javafx.scene.image.Image;
 
 public class UserViewModel {
     public String userName;
-    public String lastMessage;
+    public SimpleStringProperty lastMessage;
     public SimpleStringProperty time;
     public SimpleStringProperty notificationsNumber;
     public Image avatarImage;
@@ -17,7 +17,7 @@ public class UserViewModel {
 
     public UserViewModel(String userName, String lastMessage, String time, String notificationsNumber, Image avatarImage) {
         this.userName = userName;
-        this.lastMessage = lastMessage;
+        this.lastMessage = new SimpleStringProperty(lastMessage);
         this.time = new SimpleStringProperty(time);
         this.notificationsNumber = new SimpleStringProperty(notificationsNumber);
         this.avatarImage = avatarImage;
@@ -35,11 +35,15 @@ public class UserViewModel {
     }
 
     public String getLastMessage() {
+        return lastMessage.get();
+    }
+
+    public SimpleStringProperty lastMessageProperty() {
         return lastMessage;
     }
 
     public void setLastMessage(String lastMessage) {
-        this.lastMessage = lastMessage;
+        this.lastMessage.set(lastMessage);
     }
 
     public SimpleStringProperty timeProperty() {
