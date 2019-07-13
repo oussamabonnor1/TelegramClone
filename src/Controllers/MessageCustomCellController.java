@@ -1,12 +1,10 @@
 package Controllers;
 
-import Models.CellViewModel;
 import Models.MessageViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;

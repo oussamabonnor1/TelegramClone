@@ -126,7 +126,7 @@
                               <Insets bottom="30.0" />
                            </VBox.margin>
                         </Label>
-                        <JFXTextField focusColor="WHITE" promptText="User name" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3">
+                        <JFXTextField fx:id="userNameTextField" focusColor="WHITE" promptText="User name" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3">
                            <font>
                               <Font size="22.0" />
                            </font>

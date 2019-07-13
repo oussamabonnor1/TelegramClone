@@ -1,6 +1,6 @@
 package Controllers;
 
-import Models.CellViewModel;
+import Models.UserViewModel;
 import Models.MessageViewModel;
 import ToolBox.NetworkConnection;
 import javafx.application.Platform;
@@ -19,7 +19,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static ToolBox.Utilities.*;
 import static ToolBox.Utilities.getCurrentTime;
 
 public class HomeController implements Initializable {
@@ -32,21 +31,24 @@ public class HomeController implements Initializable {
     NetworkConnection connection;
 
     @FXML
-    private ListView<CellViewModel> usersListView;
+    private ListView<UserViewModel> usersListView;
     @FXML
     private ListView<MessageViewModel> messagesListView;
 
-    private ObservableList<CellViewModel> cellsList = FXCollections.observableArrayList();
-    CellViewModel currentlySelectedUser;
+    private ObservableList<UserViewModel> usersList = FXCollections.observableArrayList();
+    UserViewModel currentlySelectedUser, localUser;
+    Image userImage = new Image("resources/img/smile.png");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         for (int i = 0; i < 10; i++) {
-            cellsList.add(new CellViewModel("user " + i, "message " + i,
-                    getCurrentTime(), 0 + "", new Image("resources/img/smile.png")));
+            usersList.add(new UserViewModel("user " + i, "message " + i,
+                    getCurrentTime(), 0 + "", userImage));
         }
 
-        usersListView.setItems(cellsList);
+        localUser = new UserViewModel(LogInController.userName, "message", getCurrentTime(), 0 + "", userImage);
+
+        usersListView.setItems(usersList);
         usersListView.setCellFactory(param -> new UserCustomCellController() {
             {
                 prefWidthProperty().bind(usersListView.widthProperty().subtract(0)); // 1
@@ -61,25 +63,30 @@ public class HomeController implements Initializable {
                     currentlySelectedUser = usersListView.getSelectionModel().getSelectedItem();
                     messagesListView.setItems(currentlySelectedUser.messagesList);
                     chatRoomNameLabel.setText(currentlySelectedUser.userName);
+                    messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
                 }
         );
 
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
-            currentlySelectedUser.time.setValue(getCurrentTime());
-            currentlySelectedUser.messagesList.add(new MessageViewModel(data.toString(), getCurrentTime(), false));
+            String[] messageInfo = data.toString().split(">"); //User and message
+            UserViewModel user = usersList.get(findUser(messageInfo[0]));
+            user.time.setValue(getCurrentTime());
+            user.lastMessage = messageInfo[1];
+            user.messagesList.add(new MessageViewModel(messageInfo[1], getCurrentTime(), false));
             messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
-            currentlySelectedUser.notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
+            user.notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
         }), "127.0.0.1", false, 55555);
         connection.openConnection();
 
         usersListView.getSelectionModel().select(0);
     }
 
+
     @FXML
     void sendMessage(ActionEvent event) {
         try {
             currentlySelectedUser.messagesList.add(new MessageViewModel(messageField.getText(), getCurrentTime(), true));
-            connection.sendData(messageField.getText());
+            connection.sendData(localUser.getUserName() + ">" + messageField.getText());
             messageField.clear();
             messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
         } catch (IOException e) {
@@ -132,5 +139,13 @@ public class HomeController implements Initializable {
         Main.stage.setIconified(true);
     }
 
+    int findUser(String userName) {
+        for (int i = 0; i < usersList.size(); i++) {
+            if (usersList.get(i).getUserName().matches(userName)) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }

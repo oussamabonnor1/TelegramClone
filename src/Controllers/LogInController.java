@@ -1,5 +1,6 @@
 package Controllers;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LogInController implements Initializable {
+
+    public static String userName;
+    @FXML
+    private JFXTextField userNameTextField;
 
 
     @Override
@@ -32,6 +37,7 @@ public class LogInController implements Initializable {
     @FXML
     void signUp(ActionEvent event) {
         try {
+            userName = userNameTextField.getText();
             Parent root = FXMLLoader.load(getClass().getResource("../Views/home_view.fxml"));
             Main.stage.setScene(new Scene(root));
         } catch (IOException e) {

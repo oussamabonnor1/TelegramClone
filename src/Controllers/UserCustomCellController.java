@@ -1,6 +1,6 @@
 package Controllers;
 
-import Models.CellViewModel;
+import Models.UserViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -11,7 +11,7 @@ import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
 
-public class UserCustomCellController extends ListCell<CellViewModel> {
+public class UserCustomCellController extends ListCell<UserViewModel> {
 
     @FXML
     private GridPane root;
@@ -35,7 +35,7 @@ public class UserCustomCellController extends ListCell<CellViewModel> {
     private StackPane notificationPanel;
 
     @Override
-    protected void updateItem(CellViewModel item, boolean empty) {
+    protected void updateItem(UserViewModel item, boolean empty) {
         super.updateItem(item, empty);
         if (empty || item == null) {
             setText(null);

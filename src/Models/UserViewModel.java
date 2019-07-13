@@ -7,7 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
 
 
-public class CellViewModel {
+public class UserViewModel {
     public String userName;
     public String lastMessage;
     public SimpleStringProperty time;
@@ -15,7 +15,7 @@ public class CellViewModel {
     public Image avatarImage;
     public ObservableList<MessageViewModel> messagesList;
 
-    public CellViewModel(String userName, String lastMessage, String time, String notificationsNumber, Image avatarImage) {
+    public UserViewModel(String userName, String lastMessage, String time, String notificationsNumber, Image avatarImage) {
         this.userName = userName;
         this.lastMessage = lastMessage;
         this.time = new SimpleStringProperty(time);
