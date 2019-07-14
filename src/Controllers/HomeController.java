@@ -48,8 +48,6 @@ public class HomeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         usersList.add(new UserViewModel("Oussama", "message ",
                 getCurrentTime(), 0 + "", userImage));
-        usersList.add(new UserViewModel("Latifa", "message ",
-                getCurrentTime(), 0 + "", userImage));
         for (int i = 2; i < 10; i++) {
             usersList.add(new UserViewModel("user " + i, "message " + i,
                     getCurrentTime(), 0 + "", userImage));
@@ -122,10 +120,13 @@ public class HomeController implements Initializable {
             File imageFile = fileChooser.showOpenDialog(new Stage());
             BufferedImage bufferedImage = ImageIO.read(imageFile);
             Image image = SwingFXUtils.toFXImage(bufferedImage, null);
-            connection.sendImage(image);
+            currentlySelectedUser.messagesList.add(new MessageViewModel("", getCurrentTime(), false, true, image));
+            messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
     }
 
