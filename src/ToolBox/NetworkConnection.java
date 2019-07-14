@@ -1,5 +1,9 @@
 package ToolBox;
 
+import javafx.scene.image.Image;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -31,6 +35,11 @@ public class NetworkConnection {
         connection.outputStream.writeObject(data);
     }
 
+    public void sendImage(Image image) throws IOException {
+        connection.outputStream.defaultWriteObject();
+        connection.outputStream.writeObject(image);
+    }
+
     public void closeConnection() throws IOException {
         connection.socket.close();
     }
@@ -52,8 +61,11 @@ public class NetworkConnection {
                 this.outputStream = outputStream;
 
                 while (true) {
-                    Serializable data = (Serializable) inputStream.readObject();
-                    receiveCallBack.accept(data);
+                    BufferedImage img = ImageIO.read(ImageIO.createImageInputStream(inputStream.readObject()));
+                    if (img == null) {
+                        Serializable data = (Serializable) inputStream.readObject();
+                        receiveCallBack.accept(data);
+                    }
                 }
 
             } catch (IOException | ClassNotFoundException e) {

@@ -6,6 +6,7 @@ import ToolBox.NetworkConnection;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -14,8 +15,12 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -73,19 +78,24 @@ public class HomeController implements Initializable {
         );
 
         connection = new NetworkConnection(data -> Platform.runLater(() -> {
-            String[] messageInfo = data.toString().split(">"); //Sender and Receiver and message
-            if (messageInfo[1].matches(localUser.getUserName())) {
-
-                int userSender = findUser(messageInfo[0]);
+            Image image = null;
+            String[] messageInfo = data.toString().split(">"); //Data type > Sender and Receiver and data
+            if (messageInfo[2].matches(localUser.getUserName())) {
+                if (messageInfo[0].matches("image")) {
+                    image = new Image((InputStream) data);
+                }
+                int userSender = findUser(messageInfo[1]);
                 usersList.get(userSender).time.setValue(getCurrentTime());
-                usersList.get(userSender).lastMessage.setValue(messageInfo[2]);
-                usersList.get(userSender).messagesList.add(new MessageViewModel(messageInfo[2], getCurrentTime(), false));
+                if (messageInfo[4].matches("null")) {
+                    usersList.get(userSender).lastMessage.setValue(messageInfo[3]);
+                }
+                usersList.get(userSender).messagesList.add(new MessageViewModel(messageInfo[3], getCurrentTime(), false, image == null, image));
                 messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
                 usersList.get(userSender).notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
                 System.out.println("Sender: " + usersList.get(userSender).userName
                         + "\n" + "Receiver: " + localUser.getUserName());
             }
-        }), "127.0.0.1", true, 55555);
+        }), "127.0.0.1", false, 55555);
         connection.openConnection();
 
         usersListView.getSelectionModel().select(0);
@@ -95,9 +105,9 @@ public class HomeController implements Initializable {
     @FXML
     void sendMessage(ActionEvent event) {
         try {
-            currentlySelectedUser.messagesList.add(new MessageViewModel(messageField.getText(), getCurrentTime(), true));
-            //sending message as: sender>receiver>data
-            connection.sendData(localUser.getUserName() + ">" + currentlySelectedUser.getUserName() + ">" + messageField.getText());
+            currentlySelectedUser.messagesList.add(new MessageViewModel(messageField.getText(), getCurrentTime(), true, false, null));
+            //sending message as: data type > sender > receiver > data
+            connection.sendData("text>" + localUser.getUserName() + ">" + currentlySelectedUser.getUserName() + ">" + messageField.getText());
             messageField.clear();
             messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
         } catch (IOException e) {
@@ -107,6 +117,15 @@ public class HomeController implements Initializable {
 
     @FXML
     void attachFile(MouseEvent event) {
+        try {
+            FileChooser fileChooser = new FileChooser();
+            File imageFile = fileChooser.showOpenDialog(new Stage());
+            BufferedImage bufferedImage = ImageIO.read(imageFile);
+            Image image = SwingFXUtils.toFXImage(bufferedImage, null);
+            connection.sendImage(image);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
