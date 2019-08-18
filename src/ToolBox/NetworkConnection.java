@@ -61,11 +61,9 @@ public class NetworkConnection {
                 this.outputStream = outputStream;
 
                 while (true) {
-                    BufferedImage img = ImageIO.read(ImageIO.createImageInputStream(inputStream.readObject()));
-                    if (img == null) {
-                        Serializable data = (Serializable) inputStream.readObject();
-                        receiveCallBack.accept(data);
-                    }
+                    Serializable data = (Serializable) inputStream.readObject();
+                    receiveCallBack.accept(data);
+
                 }
 
             } catch (IOException | ClassNotFoundException e) {

@@ -46,11 +46,20 @@ public class HomeController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        usersList.add(new UserViewModel("Oussama", "message ",
+        String name = "Jetlight";
+        usersList.add(new UserViewModel(name, "message ",
                 getCurrentTime(), 0 + "", userImage));
-        for (int i = 2; i < 10; i++) {
-            usersList.add(new UserViewModel("user " + i, "message " + i,
-                    getCurrentTime(), 0 + "", userImage));
+
+        if (name.matches("Oussama")) {
+            usersList.addAll(new UserViewModel("Oliver", "Hello", getCurrentTime(), 1 + "", userImage)
+                    , new UserViewModel("Harry", "Did you receive my call?", getCurrentTime(), 1 + "", userImage)
+                    , new UserViewModel("George", "How are you?", getCurrentTime(), 2 + "", userImage)
+                    , new UserViewModel("Noah", "Yeah", getCurrentTime(), 0 + "", userImage)
+                    , new UserViewModel("Jack", "No way!", getCurrentTime(), 0 + "", userImage));
+        } else {
+            usersList.addAll(new UserViewModel("Jacob", "Congratulations", getCurrentTime(), 1 + "", userImage)
+                    , new UserViewModel("Leo", "Alright, thanks", getCurrentTime(), 0 + "", userImage)
+                    , new UserViewModel("Oscar", "I agree, when?", getCurrentTime(), 2 + "", userImage));
         }
 
         localUser = new UserViewModel(LogInController.userName, "message", getCurrentTime(), 0 + "", userImage);
@@ -84,16 +93,17 @@ public class HomeController implements Initializable {
                 }
                 int userSender = findUser(messageInfo[1]);
                 usersList.get(userSender).time.setValue(getCurrentTime());
-                if (messageInfo[4].matches("null")) {
+                if (messageInfo[3].matches("null")) {
                     usersList.get(userSender).lastMessage.setValue(messageInfo[3]);
                 }
-                usersList.get(userSender).messagesList.add(new MessageViewModel(messageInfo[3], getCurrentTime(), false, image == null, image));
+                usersList.get(userSender).messagesList.add(new MessageViewModel(messageInfo[3], getCurrentTime(), false, image != null, image));
                 messagesListView.scrollTo(currentlySelectedUser.messagesList.size());
                 usersList.get(userSender).notificationsNumber.setValue((Integer.valueOf(currentlySelectedUser.notificationsNumber.getValue()) + 1) + "");
                 System.out.println("Sender: " + usersList.get(userSender).userName
-                        + "\n" + "Receiver: " + localUser.getUserName());
+                        + "\n" + "Receiver: " + localUser.getUserName()
+                        + "\n" + "Image : " + image + messageInfo[0]);
             }
-        }), "127.0.0.1", false, 55555);
+        }), "127.0.0.1", name.matches("Jetlight"), 55555);
         connection.openConnection();
 
         usersListView.getSelectionModel().select(0);
