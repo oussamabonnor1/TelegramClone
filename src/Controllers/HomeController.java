@@ -1,5 +1,3 @@
-package Controllers;
-
 import Models.UserViewModel;
 import Models.MessageViewModel;
 import ToolBox.NetworkConnection;

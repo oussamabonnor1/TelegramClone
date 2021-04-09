@@ -1,5 +1,3 @@
-package Controllers;
-
 import Models.MessageViewModel;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,15 +32,15 @@ public class MessageCustomCellController extends ListCell<MessageViewModel> {
         } else {
             if (item.isOutgoing) {
                 if (item.isImage) {
-                    fxmlLoader = new FXMLLoader(getClass().getResource("../Views/outgoing_image_custom_cell_view.fxml"));
+                    fxmlLoader = new FXMLLoader(getClass().getResource("outgoing_image_custom_cell_view.fxml"));
                 } else {
-                    fxmlLoader = new FXMLLoader(getClass().getResource("../Views/outgoing_message_custom_cell_view.fxml"));
+                    fxmlLoader = new FXMLLoader(getClass().getResource("outgoing_message_custom_cell_view.fxml"));
                 }
             } else {
                 if (item.isImage) {
-                    fxmlLoader = new FXMLLoader(getClass().getResource("../Views/incoming_image_custom_cell_view.fxml"));
+                    fxmlLoader = new FXMLLoader(getClass().getResource("incoming_image_custom_cell_view.fxml"));
                 } else {
-                    fxmlLoader = new FXMLLoader(getClass().getResource("../Views/incoming_message_custom_cell_view.fxml"));
+                    fxmlLoader = new FXMLLoader(getClass().getResource("incoming_message_custom_cell_view.fxml"));
                 }
             }
             fxmlLoader.setController(this);
