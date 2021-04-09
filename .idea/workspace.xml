@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4ed31f09-9995-4300-b084-0bd58d3f8b82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/LogInController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/LogInController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/MessageCustomCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/MessageCustomCellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controllers/UserCustomCellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/UserCustomCellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/MessageViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Models/MessageViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/UserViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/Models/UserViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToolBox/NetworkConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ToolBox/NetworkConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ToolBox/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controllers/ToolBox/Utilities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/home_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/incoming_image_custom_cell_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/incoming_image_custom_cell_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/incoming_message_custom_cell_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/incoming_message_custom_cell_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/login_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/login_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/outgoing_image_custom_cell_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/outgoing_image_custom_cell_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/outgoing_message_custom_cell_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/outgoing_message_custom_cell_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/user_custom_cell_view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user_custom_cell_view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/css/cellViewCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/css/cellViewCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/css/imageBackground.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/css/imageBackground.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/css/messageCellViewCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/css/messageCellViewCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/css/textField.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/css/textField.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/css/usersListViewCss.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/css/usersListViewCss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/Liste.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/Liste.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/attach.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/attach.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/calculator.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/calculator.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/email.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/email.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/jetlight logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/jetlight logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/loginbackground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/loginbackground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/mic.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/mic.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/minimize.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/minimize.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/quitButton.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/quitButton.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/search.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/search.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/settings.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/settings.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/img/smile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/resources/img/smile.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TelegramClone" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TelegramClone" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TelegramClone" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="TelegramClone" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1quZUFWaNT1xO3Up45lMqHMRAic" />
+  <component name="ProjectViewState">
+    <option name="compactDirectories" value="true" />
+    <option name="flattenModules" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.37437436" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/views" />
+      <recent name="$PROJECT_DIR$/src/Controllers" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.TelegramClone [clean]">
+    <configuration name="TelegramClone [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TelegramClone [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.TelegramClone [clean]" />
+        <item itemvalue="Gradle.TelegramClone [run]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4ed31f09-9995-4300-b084-0bd58d3f8b82" name="Default Changelist" comment="" />
+      <created>1617931448958</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617931448958</updated>
+      <workItem from="1617931450486" duration="30000" />
+      <workItem from="1617931693709" duration="47000" />
+      <workItem from="1617931746814" duration="1783000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="31" width="1028" height="734" key="#Project_Structure" timestamp="1617931704479">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state x="0" y="31" width="1028" height="734" key="#Project_Structure/0.31.1366.737@0.31.1366.737" timestamp="1617931704479" />
+    <state width="1320" height="257" key="GridCell.Tab.0.bottom" timestamp="1617933553150">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state width="1320" height="257" key="GridCell.Tab.0.bottom/0.31.1366.737@0.31.1366.737" timestamp="1617933553150" />
+    <state width="1320" height="257" key="GridCell.Tab.0.center" timestamp="1617933553150">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state width="1320" height="257" key="GridCell.Tab.0.center/0.31.1366.737@0.31.1366.737" timestamp="1617933553150" />
+    <state width="1320" height="257" key="GridCell.Tab.0.left" timestamp="1617933553150">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state width="1320" height="257" key="GridCell.Tab.0.left/0.31.1366.737@0.31.1366.737" timestamp="1617933553150" />
+    <state width="1320" height="257" key="GridCell.Tab.0.right" timestamp="1617933553150">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state width="1320" height="257" key="GridCell.Tab.0.right/0.31.1366.737@0.31.1366.737" timestamp="1617933553150" />
+    <state x="0" y="31" width="1028" height="734" key="SettingsEditor" timestamp="1617932626777">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state x="0" y="31" width="1028" height="734" key="SettingsEditor/0.31.1366.737@0.31.1366.737" timestamp="1617932626777" />
+    <state x="373" y="118" width="620" height="622" key="find.popup" timestamp="1617933149256">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state x="373" y="118" width="620" height="622" key="find.popup/0.31.1366.737@0.31.1366.737" timestamp="1617933149256" />
+    <state x="345" y="178" width="672" height="677" key="run.anything.popup" timestamp="1617933523424">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state x="345" y="178" width="672" height="677" key="run.anything.popup/0.31.1366.737@0.31.1366.737" timestamp="1617933523424" />
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1617933513646">
+      <screen x="0" y="31" width="1366" height="737" />
+    </state>
+    <state x="346" y="89" width="672" height="678" key="search.everywhere.popup/0.31.1366.737@0.31.1366.737" timestamp="1617933513646" />
+  </component>
+</project>

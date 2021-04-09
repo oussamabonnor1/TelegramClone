@@ -26,7 +26,7 @@
          <children>
             <ImageView fx:id="avatarImage" fitHeight="50.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                <image>
-                  <Image url="@../resources/img/email.png" />
+                  <Image url="@resources/img/email.png" />
                </image>
             </ImageView>
          </children>

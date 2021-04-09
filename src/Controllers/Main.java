@@ -1,4 +1,3 @@
-package Controllers;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +10,7 @@ public class Main extends Application {
     public static Stage stage;
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("../Views/login_view.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("home_view.fxml"));
         primaryStage.setScene(new Scene(root, 1280, 720));
         primaryStage.initStyle(StageStyle.UNDECORATED);
         stage = primaryStage;

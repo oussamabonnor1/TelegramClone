@@ -1,4 +1,3 @@
-package Controllers;
 
 import Models.UserViewModel;
 import javafx.fxml.FXML;
@@ -41,7 +40,7 @@ public class UserCustomCellController extends ListCell<UserViewModel> {
             setText(null);
             setGraphic(null);
         } else {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("../Views/user_custom_cell_view.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("user_custom_cell_view.fxml"));
             fxmlLoader.setController(this);
             try {
                 fxmlLoader.load();

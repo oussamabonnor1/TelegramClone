@@ -1,0 +1,49 @@
+
+plugins {
+    id 'application'
+    id 'org.openjfx.javafxplugin'
+}
+allprojects {
+    group = 'com.example.gradle'
+    version = '0.1.0'
+}
+
+
+javafx {
+    version = "15.0.1"
+    modules = ['javafx.base', 'javafx.controls' , 'javafx.fxml','javafx.graphics','javafx.media','javafx.swing' ]
+}
+sourceSets {
+
+    main{
+        java {
+            srcDir 'src/Controllers'
+        }
+        resources{
+            srcDir 'src/views'
+        }
+    }
+
+}
+mainClassName = 'Main'
+apply plugin: 'java'
+apply plugin: 'application'
+
+
+repositories {
+    google()
+    jcenter()
+    mavenCentral()
+}
+
+
+dependencies {
+
+    compile 'com.jfoenix:jfoenix:9.0.10'
+
+}
+
+
+
+// to run project use gradle>Tasks>application>run
+//

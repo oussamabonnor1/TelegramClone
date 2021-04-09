@@ -1,4 +1,3 @@
-package Controllers;
 
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -38,7 +37,7 @@ public class LogInController implements Initializable {
     void signUp(ActionEvent event) {
         try {
             userName = userNameTextField.getText();
-            Parent root = FXMLLoader.load(getClass().getResource("../Views/home_view.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("home_view.fxml"));
             Main.stage.setScene(new Scene(root));
         } catch (IOException e) {
             e.printStackTrace();

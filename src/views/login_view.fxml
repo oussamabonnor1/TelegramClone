@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="center" stylesheets="@../resources/css/imageBackground.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LogInController">
+<GridPane alignment="center" stylesheets="@resources/css/imageBackground.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LogInController">
    <columnConstraints>
       <ColumnConstraints minWidth="10.0" percentWidth="100.0" />
    </columnConstraints>
@@ -35,12 +35,12 @@
                <children>
                   <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#minimizeApp" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/img/minimize.png" />
+                        <Image url="@resources/img/minimize.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="25.0" fitWidth="25.0" onMouseClicked="#closeApp" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/img/quitButton.png" />
+                        <Image url="@resources/img/quitButton.png" />
                      </image>
                   </ImageView>
                </children>
@@ -64,7 +64,7 @@
                <children>
                   <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/img/email.png" />
+                        <Image url="@resources/img/email.png" />
                      </image>
                   </ImageView>
                   <Label text="JetGram" textFill="WHITE">
@@ -162,12 +162,12 @@
                               <Insets bottom="30.0" />
                            </VBox.margin>
                         </Label>
-                        <JFXTextField fx:id="userNameTextField" focusColor="WHITE" promptText="User name" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3">
+                        <JFXTextField fx:id="userNameTextField" focusColor="WHITE" promptText="User name" stylesheets="@resources/css/textField.css" unFocusColor="#d1d3d3">
                            <font>
                               <Font size="22.0" />
                            </font>
                         </JFXTextField>
-                        <JFXTextField focusColor="WHITE" promptText="Phone Number" stylesheets="@../resources/css/textField.css" unFocusColor="#d1d3d3">
+                        <JFXTextField focusColor="WHITE" promptText="Phone Number" stylesheets="@resources/css/textField.css" unFocusColor="#d1d3d3">
                            <font>
                               <Font size="22.0" />
                            </font>
